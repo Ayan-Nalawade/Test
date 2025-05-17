@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../assets/components/Button';
+import Button from '../components/Button';
 
 const Home: React.FC = () => {
   const handleClick = () => {
@@ -19,4 +19,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;

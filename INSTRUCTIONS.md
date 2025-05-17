@@ -55,7 +55,8 @@ This document provides step-by-step instructions for setting up and using the Do
 
 1. On the home page, find the "Load Google Document" section.
 2. Enter the Google Document ID in the input field.
-   - For example, `https://docs.google.com/document/d/1ABC123XYZ/edit`
+   - The Document ID is the part of the Google Docs URL after `/d/` and before any further parameters.
+   - For example, in `https://docs.google.com/document/d/1ABC123XYZ/edit`, the ID is `1ABC123XYZ`.
 3. Click the "Load Document" button.
 4. If the document is publicly accessible, its content will be loaded and displayed.
 
