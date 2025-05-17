@@ -1,8 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+}
+
+.inter-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 6em;
+  margin: 0;
+  padding: 0;
+  color: white;
+  line-height: 1;
+  display: block;
 }
 /* 
 .logo {
@@ -61,4 +89,94 @@
 .custom-button:focus,
 .custom-button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* === removing default button style ===*/
+.button-header {
+  margin: 0;
+  margin-top: 4em;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transform: translateY(-2em);
+}
+
+/* button styling */
+.button-header {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 3em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  display: inline-block;
+}
+
+/* this is the text, when you hover on button */
+.hover-text-header {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+  white-space: nowrap;
+}
+
+/* hover */
+.button-header:hover .hover-text-header {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+.button {
+  position: relative;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 1em 2em;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1.2em;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.button .actual-text,
+.button .hover-text {
+  display: block;
+  transition: opacity 0.3s;
+}
+
+.button .hover-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button:hover .actual-text {
+  opacity: 0;
+}
+
+.button:hover .hover-text {
+  opacity: 1;
 }

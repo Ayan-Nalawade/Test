@@ -10,10 +10,11 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="inter-heading">DocsGPT</h1>
       <Button 
-        text="Click Me" 
+        text="Transform your docs" 
         onClick={handleClick}
-        className="custom-button"
+        className="button-header"
       />
     </div>
   );

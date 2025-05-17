@@ -11,8 +11,10 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
         <button 
             onClick={onClick}
             className={className}
+            data-text={text}
         >
-            {text}
+            <span>{text}</span>
+            <span className="hover-text-header">{text}</span>
         </button>
     );
 };
