@@ -658,3 +658,33 @@ body {
   color: #e0e0e0;
   font-size: 1.1rem;
 }
+
+.loading-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  position: absolute;
+  top: -28rem;  /* Position it between the input and button */
+  left: -8rem;    /* Match the input's left position */
+  right: -11rem;  /* Match the button's right position */
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00FFAB, #37FF8B);
+  border-radius: 4px;
+  transition: width 0.3s ease-out;
+  position: relative;
+  box-shadow: 0 0 10px rgba(55, 255, 139, 0.3);
+}
+
+.loading-text {
+  position: absolute;
+  top: -1.5rem;
+  right: 0;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
