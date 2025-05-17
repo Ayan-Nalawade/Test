@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
 interface NavbarProps {}
 
@@ -13,9 +14,17 @@ const Navbar: React.FC<NavbarProps> = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
-          <a href="/" className="brand-logo">
+          <ScrollLink
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="brand-logo"
+            onClick={() => setIsOpen(false)}
+          >
             DocsGPT
-          </a>
+          </ScrollLink>
         </div>
 
         <button 
@@ -31,16 +40,60 @@ const Navbar: React.FC<NavbarProps> = () => {
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <ul className="nav-list">
             <li className="nav-item">
-              <a href="/" className="nav-link">Home</a>
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="nav-link"
+                activeClass="active"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </ScrollLink>
             </li>
             <li className="nav-item">
-              <a href="/docs" className="nav-link">Enter URL</a>
+              <ScrollLink
+                to="docs"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="nav-link"
+                activeClass="active"
+                onClick={() => setIsOpen(false)}
+              >
+                Enter URL
+              </ScrollLink>
             </li>
             <li className="nav-item">
-              <a href="/about" className="nav-link">How it works</a>
+              <ScrollLink
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="nav-link"
+                activeClass="active"
+                onClick={() => setIsOpen(false)}
+              >
+                How it works
+              </ScrollLink>
             </li>
             <li className="nav-item">
-              <a href="/contact" className="nav-link">Contact</a>
+              <ScrollLink
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="nav-link"
+                activeClass="active"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </ScrollLink>
             </li>
           </ul>
         </div>
