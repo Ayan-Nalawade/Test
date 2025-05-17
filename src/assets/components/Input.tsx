@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface InputProps {
-  type?: 'text' | 'email' | 'password' | 'number' | 'search' | 'url';
+  type?: 'text' | 'email' | 'password' | 'number' | 'search';
   placeholder?: string;
   value: string;
   onChange: (value: string) => void;

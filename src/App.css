@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #1a1a1a;
 }
 
@@ -164,13 +164,103 @@ body {
 .inter-heading {
   font-family: 'Inter', sans-serif;
   font-weight: 900;
-  font-size: 6em;
+  font-size: 7em;
   margin: 0;
   padding: 0;
   color: white;
-  line-height: 1;
+  line-height: 1.1;
   display: block;
+  text-shadow: 0 0 20px rgba(55, 255, 139, 0.3);
+  animation: fadeIn 1s ease-out;
 }
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  margin-top: -2rem;
+  animation: slideUp 0.8s ease-out;
+}
+
+.docs-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.docs-input {
+  width: 100%;
+  position: absolute;
+  top: -34rem;
+  left: -8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.docs-container .custom-button {
+  position: absolute;
+  top: -33.75rem;
+  right: -11rem;
+  white-space: nowrap;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #00FFAB;
+  color: black;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.docs-container .custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 171, 0.3);
+}
+
+.docs-input:focus {
+  border-color: #37FF8B;
+  box-shadow: 0 0 20px rgba(55, 255, 139, 0.2);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* 
 .logo {
   height: 6em;
@@ -213,8 +303,8 @@ body {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #00FFAB;
+  color: black; 
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -233,7 +323,7 @@ body {
 /* === removing default button style ===*/
 .button-header {
   margin: 0;
-  margin-top: 4em;
+  margin-bottom: 2rem;
   height: auto;
   background: transparent;
   padding: 0;
@@ -241,7 +331,7 @@ body {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  transform: translateY(-2em);
+  transform: translateY(0);
 }
 
 /* button styling */
@@ -249,7 +339,7 @@ body {
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
   --animation-color: #37FF8B;
-  --fs-size: 3em;
+  --fs-size: 2.5em;
   letter-spacing: 3px;
   text-decoration: none;
   font-size: var(--fs-size);
@@ -258,7 +348,6 @@ body {
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
-  display: inline-block;
 }
 
 /* this is the text, when you hover on button */
@@ -321,128 +410,67 @@ body {
 }
 
 .main-content {
-  padding-top: 80px; /* Add space for the fixed navbar */
+  padding-top: 120px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  gap: 1rem;
 }
 
-.sections-container {
+/* Input Component Styles */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   width: 100%;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  max-width: 400px;
 }
 
-section {
-  min-height: 100vh;
-  padding: 80px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-section#home {
-  background-color: #1a1a1a;
-}
-
-section#docs {
-  background-color: #242424;
-}
-
-section#about {
-  background-color: #1a1a1a;
-}
-
-section#contact {
-  background-color: #242424;
-}
-
-.nav-link.active {
-  color: #007bff !important;
-}
-
-/* Form styles */
-.contact-container {
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
+.input-label {
+  font-size: 0.9rem;
   font-weight: 500;
-  color: #fff;
+  color: #333;
 }
 
-.form-group input,
-.form-group textarea {
-  padding: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
+.required-mark {
+  color: #ff4d4f;
+  margin-left: 0.25rem;
 }
 
-.docs-container {
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.input-field {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #333;
 }
 
-.docs-input {
-  padding: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
-  width: 100%;
+.input-field:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
-.about-container {
-  max-width: 800px;
-  width: 100%;
-  padding: 20px;
+.input-field::placeholder {
+  color: #999;
 }
 
-.about-section {
-  margin-bottom: 40px;
-  text-align: left;
+.input-field:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
 }
 
-.about-section h2 {
-  color: #fff;
-  margin-bottom: 20px;
+.input-field.error {
+  border-color: #ff4d4f;
 }
 
-.about-section p {
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.about-section ul {
-  color: #ccc;
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.about-section li {
-  margin-bottom: 10px;
+.error-message {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
 }

@@ -3,7 +3,6 @@ import React from 'react';
 const Docs: React.FC = () => {
   return (
     <main className="main-content">
-      <h1>Enter URL</h1>
       <div className="docs-container">
         <input
           type="url"
