@@ -37,11 +37,6 @@ const Navbar: React.FC<NavbarProps> = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="docs" smooth={true} duration={500} className="nav-link">
-                Enter URL
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link to="about" smooth={true} duration={500} className="nav-link">
                 How it works
               </Link>
